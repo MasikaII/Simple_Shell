@@ -23,8 +23,10 @@ int shell_cd(char **args)
  */
 int shell_help(char **args)
 {
+	if (*args == NULL)
+		return (1);
 	write(1, "Simple Shell\n", 13);
-	write(1, "Type help followed by arguments, and hit enter.\n", 62);
+	write(1, "Type help followed by arguments, and hit enter.\n", 48);
 	write(1, "Use the man command for information on other programs.\n", 55);
 	return (1);
 }
@@ -36,5 +38,7 @@ int shell_help(char **args)
  */
 int shell_exit(char **args)
 {
+	if (*args == NULL)
+		return (1);
 	return (0);
 }
